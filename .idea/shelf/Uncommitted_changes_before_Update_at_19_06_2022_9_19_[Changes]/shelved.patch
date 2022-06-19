@@ -1,0 +1,13 @@
+Index: Hometask_7.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Hometask_7.py b/Hometask_7.py
+new file mode 100644
+--- /dev/null	(date 1655618013286)
++++ b/Hometask_7.py	(date 1655618013286)
+@@ -0,0 +1,2 @@
++print('Hellow world')
++print('URA')
+\ No newline at end of file
