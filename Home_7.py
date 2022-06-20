@@ -42,10 +42,12 @@ def get_shop_list_by_dishes(dishes, person_count):
     print('')
     pprint(dict_products_for_purchusing)
 get_shop_list_by_dishes(['Утка по-пекински', 'Омлет'], 2)
-
+print('')
 
 
 # -----------------------------------------------Task_3--------------------------------------------
+print('')
+print('------------------------Result for task 7_3------------------------------------------------')
 file_name_1 = '7_1.txt'
 file_name_2 = '7_2.txt'
 file_name_3 = '7_3.txt'
@@ -56,24 +58,24 @@ def reading_files(file_name):
         number_of_string = 0
         for line in lines:
             number_of_string += 1
-    return(number_of_string)
+    # with open(file_name, 'r', encoding="utf-8") as file:
+    #     lines_1 = file.readline()
+    #     for line in range(number_of_string):
+
+    return(lines, number_of_string)
+
 reading_files(file_name_1)
 reading_files(file_name_2)
 reading_files(file_name_3)
 
 dict = {file_name_1: reading_files(file_name_1), file_name_2: reading_files(file_name_2), file_name_3: reading_files(file_name_3)}
-dict = {k: dict[k] for k in sorted(dict, key=dict.get, reverse=False)}
-
-print('')
-print('------------------------Result for task 7_3------------------------------------------------')
-print(dict)
+dict = {k: dict[k] for k in sorted(dict, key=dict.get, reverse=True)}
 
 
-# ------Example N1 ------
-# def logger(file_name, mode, data):
-#     with open(file_name, 'a') as file_obj:
-#         file_obj.write(f"{data}\n")
-# # \n при записи в файл, мы сами должны контролировать переход каретки на следующую строку с помощью \n
-# logger(file_name, 'data')
-# logger(file_name, 'data')
-# logger(file_name,  'data')
+def writing_data_in_file(file_name):
+    with open(file_name, 'a', encoding="utf-8") as file_obj:
+        for objects in dict.items():
+            print(objects)
+            file_obj.write(f"File name: {objects[0]}\n Quantaty of lines: {objects[1]}\n")
+
+writing_data_in_file("7_final_file.txt")
