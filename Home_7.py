@@ -76,6 +76,9 @@ def writing_data_in_file(file_name):
     with open(file_name, 'a', encoding="utf-8") as file_obj:
         for objects in dict.items():
             print(objects)
-            file_obj.write(f"File name: {objects[0]}\n Quantaty of lines: {objects[1]}\n")
+            file_obj.write(f"File name: {objects[0]}\n Quantaty of lines: {objects[1][1]}\n")
+            for values in objects[1][0]:
+                file_obj.write(f"{values}\n")
+
 
 writing_data_in_file("7_final_file.txt")
